@@ -1,15 +1,17 @@
 package domain;
 
+import java.util.Arrays;
+
 public class Rocket {
     String id;
-    int numPropellers;
+    int[] numPropellersPower;
 
     public Rocket() {
     }
 
-    public Rocket(String id, int numPropellers) {
+    public Rocket(String id, int[] numPropellersPower) {
         this.id = id;
-        this.numPropellers = numPropellers;
+        this.numPropellersPower = numPropellersPower;
     }
 
     public String getId() {
@@ -20,19 +22,19 @@ public class Rocket {
         this.id = id;
     }
 
-    public int getNumPropellers() {
-        return numPropellers;
+    public int[] getnumPropellersPower() {
+        return numPropellersPower;
     }
 
-    public void setNumPropellers(int numPropellers) {
-        this.numPropellers = numPropellers;
+    public void setnumPropellersPower(int[] numPropellersPower) {
+        this.numPropellersPower = numPropellersPower;
     }
 
     @Override
     public String toString() {
         return "Rocket{" +
                 "id='" + id + '\'' +
-                ", numPropellers=" + numPropellers +
+                ", numPropellers=" + Arrays.toString(numPropellersPower) +
                 '}';
     }
 }

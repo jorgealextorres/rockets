@@ -29,20 +29,77 @@ public class Main {
         System.out.println(rocket1.toString());
         System.out.println(rocket2.toString());
 
-        for (int i = 0; i < 10; i++) {
+        // 3 speed up for both rockets
+        System.out.println("=======================");
+        for (int i = 0; i < 3; i++) {
             System.out.println(" ");
-            System.out.println("Speed Up -> " + i);
+            System.out.println("Speed Up -> " + (i+1));
             rocket1.speedUp();
 
             System.out.println(rocket1.toString());
-        }
 
-        for (int i = 0; i < 10; i++) {
+            rocket2.speedUp();
+
+            System.out.println(rocket2.toString());
+        }
+        System.out.println("=======================");
+        System.out.println("After 3 speed up : ");
+        System.out.println(rocket1.toString());
+        System.out.println(rocket2.toString());
+
+        // start simultaneous actions
+        // 5 brake for rocket 1
+        System.out.println("=======================");
+        for (int i = 0; i < 5; i++) {
             System.out.println(" ");
-            System.out.println("brake -> " + i);
+            System.out.println("brake -> " + (i+1));
             rocket1.brake();
 
             System.out.println(rocket1.toString());
         }
+        System.out.println("=======================");
+
+        System.out.println("After 5 brake for rocket 1 ('32WESSDS') : ");
+        System.out.println(rocket1.toString());
+        System.out.println(rocket2.toString());
+
+        // 7 speed up for rocket 2
+        System.out.println("=======================");
+        for (int i = 0; i < 7; i++) {
+            System.out.println(" ");
+            System.out.println("Speed Up -> " + (i+1));
+            rocket2.speedUp();
+
+            System.out.println(rocket2.toString());
+        }
+
+        // 2 time cycles for distance in rocket 1 ( 5 cycles for sepeed up rocket 1 - 7 cycles for brake rocket 2)
+        rocket1.setDistance(rocket1.getDistance() + rocket1.calculateDistance(2));
+
+        // finish simultaneous actions
+
+        System.out.println("=======================");
+        System.out.println("After 7 speed up for second rocket ('LDSFJA32') : ");
+        System.out.println(rocket1.toString());
+        System.out.println(rocket2.toString());
+
+        // 15 speed up for both rockets
+        System.out.println("=======================");
+        for (int i = 0; i < 15; i++) {
+            System.out.println(" ");
+            System.out.println("speed up -> " + (i+1));
+            rocket1.speedUp();
+
+            System.out.println(rocket1.toString());
+
+            rocket2.speedUp();
+
+            System.out.println(rocket2.toString());
+        }
+        System.out.println("=======================");
+
+        System.out.println("After 15 speed up for both rockets : ");
+        System.out.println(rocket1.toString());
+        System.out.println(rocket2.toString());
     }
 }
